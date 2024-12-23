@@ -187,21 +187,21 @@
 }
 
 -(void)Loading{
-    NSURL * url = [NSURL URLWithString:@"http://www.promastersolution.com.br/x7890_IOS/revistas/cultura/newsios.php"];
-    NSURLSession * session = [NSURLSession sharedSession];
-    
-    NSURLSessionDownloadTask * task =
-    [session downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-            NSData * jsonData = [[NSData alloc] initWithContentsOfURL:location];
-            news = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-                 
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadData];
-                [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
-                [refreshControl endRefreshing];
-            });
-        }];
-    [task resume];
+//    NSURL * url = [NSURL URLWithString:@"www.google.com"];
+//    NSURLSession * session = [NSURLSession sharedSession];
+//    
+//    NSURLSessionDownloadTask * task =
+//    [session downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+//            NSData * jsonData = [[NSData alloc] initWithContentsOfURL:location];
+//            news = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+//                 
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self.tableView reloadData];
+//                [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+//                [refreshControl endRefreshing];
+//            });
+//        }];
+//    [task resume];
 }
 
 - (void)hudWasHidden:(MBProgressHUD *)hud {
@@ -274,22 +274,9 @@
 }
 
 -(void) btnDownloadClick:(id) sender {
-
-//    ObjetoJson = [news objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
-//    
-//    // iniciar o download das imagens //
-//    NSString * pastaEdicao = [NSString stringWithFormat:@"Revista/%@",[ObjetoJson objectForKey:@"PASTA"]];
-//    
-//    NSString * URLRevista  = [ObjetoJson objectForKey:@"URLREVISTA"];
-//    NSInteger npaginas     = [[ObjetoJson objectForKey:@"num_paginas"] integerValue];
-//    
-
     NSString * pastaEdicao = @"Revista/Edicao22";
-    
     NSString * URLRevista  = @"http://www.promastersolution.com.br/x7890_IOS/revistas/cultura/edicao23/";
     NSInteger npaginas     = 36;
-
-    
     
     pageImages = [[NSMutableArray alloc] init];
     
@@ -300,8 +287,6 @@
     
     if (![self checkIfDirectoryAlreadyExists:pastaEdicao]) {
         [self criarPasta:pastaEdicao];
-        
-        
             // montar o array das urls das imagens //
             for ( NSInteger i = 0; i < npaginas; i++){
                 

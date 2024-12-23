@@ -17,7 +17,7 @@
 
 #import "SystemConfiguration/SystemConfiguration.h"
 
-#define defUrl @"http://www.promastersolution.com.br/x7890_IOS/central/visitas.php"
+//#define defUrl @"http://www.promastersolution.com.br/x7890_IOS/central/visitas.php"
 
 
 
@@ -98,30 +98,30 @@
 
 
 -(void)Loading{
-    NSURL * url = [NSURL URLWithString:defUrl];
-    
-    if(!self.isConnectionAvailable) {
-        [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
-        
-    } else{
-        
-        NSURLSession * session = [NSURLSession sharedSession];
-        
-        NSURLSessionDownloadTask * task = [session downloadTaskWithURL:url
-                                                     completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-                                                         
-                                                         NSData * jsonData = [[NSData alloc] initWithContentsOfURL:location];
-                                                         news = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-                                                         
-                                                         dispatch_async(dispatch_get_main_queue(), ^{
-                                                             [self.tableView reloadData];
-                                                             [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
-                                                             [refreshControl endRefreshing];
-                                                         });
-                                                         
-                                                     }];
-        [task resume];
-    }
+//    NSURL * url = [NSURL URLWithString:defUrl];
+//    
+//    if(!self.isConnectionAvailable) {
+//        [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+//        
+//    } else{
+//        
+//        NSURLSession * session = [NSURLSession sharedSession];
+//        
+//        NSURLSessionDownloadTask * task = [session downloadTaskWithURL:url
+//                                                     completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+//                                                         
+//                                                         NSData * jsonData = [[NSData alloc] initWithContentsOfURL:location];
+//                                                         news = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+//                                                         
+//                                                         dispatch_async(dispatch_get_main_queue(), ^{
+//                                                             [self.tableView reloadData];
+//                                                             [MBProgressHUD hideHUDForView:self.navigationController.view animated:YES];
+//                                                             [refreshControl endRefreshing];
+//                                                         });
+//                                                         
+//                                                     }];
+//        [task resume];
+//    }
 
 }
 

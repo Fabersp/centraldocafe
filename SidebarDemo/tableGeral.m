@@ -40,25 +40,23 @@
         [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     }
     
+//    NSURL * url = [NSURL URLWithString:@"http://www.promastersolution.com.br/x7890_IOS/central/geral.php"];
     
+//    NSURLSession * session = [NSURLSession sharedSession];
     
-    NSURL * url = [NSURL URLWithString:@"http://www.promastersolution.com.br/x7890_IOS/central/geral.php"];
-    
-    NSURLSession * session = [NSURLSession sharedSession];
-    
-    NSURLSessionDownloadTask * task = [session downloadTaskWithURL:url
-                                                 completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-                                                     
-                                                     NSData * jsonData = [[NSData alloc] initWithContentsOfURL:location];
-                                                     news = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
-                                                     
-                                                     dispatch_async(dispatch_get_main_queue(), ^{
-                                                         [self.tableView reloadData];
-                                                         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                                                     });
-                                                     
-                                                 }];
-    [task resume];
+//    NSURLSessionDownloadTask * task = [session downloadTaskWithURL:url
+//                                                 completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+//                                                     
+//                                                     NSData * jsonData = [[NSData alloc] initWithContentsOfURL:location];
+//                                                     news = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
+//                                                     
+//                                                     dispatch_async(dispatch_get_main_queue(), ^{
+//                                                         [self.tableView reloadData];
+//                                                         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//                                                     });
+//                                                     
+//                                                 }];
+//    [task resume];
     
 }
 
