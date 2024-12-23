@@ -108,8 +108,8 @@ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
 
 ## 👨‍💻 **Author**  
 - **Fabricio Aguiar de Padua**  
-- **LinkedIn:** www.linkedin.com/fabricio-padua(#)  
-- **Email:** fabricio_0505_@hotmail.com(#)  
+- **LinkedIn:** www.linkedin.com/fabricio-padua  
+- **Email:** fabricio_0505_@hotmail.com
 
 ---
 
